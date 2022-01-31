@@ -1,0 +1,76 @@
+:root {
+    --loading-grey: #dfdada;
+}
+
+body {
+    background-color: #d0c8c8;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 33px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    width: 300px;
+    margin: 0 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-sizing: 0 4px 6px rgba(0, 0, 0, 0.12);
+}
+
+.image {
+    height: 200px;
+}
+
+.image img {
+    display: block;
+    width: 100%;
+    height: inherit;
+    object-fit: cover;
+}
+
+.content {
+    padding: 1.7rem;
+}
+
+h3 {
+    margin: 0 0 1rem;
+    font-size: 1.7rem;
+    line-height: 1.5rem;
+}
+
+.description {
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+}
+
+.loading .image,
+.loading h3,
+.loading .description {
+    background-color: var(--loading-grey);
+    background: linear-gradient( 100deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, .5) 50%, rgba(255, 255, 255, 0) 60%) var(--loading-grey);
+    background-size: 200% 100%;
+    background-position-x: 100%;
+    animation: 1s loading ease-in-out infinite;
+}
+
+@keyframes loading {
+    to {
+        background-position-x: -20%;
+    }
+}
+
+.loading h3 {
+    min-height: 1.6rem;
+    border-radius: 4px;
+    animation-delay: .06s;
+}
+
+.loading .description {
+    min-height: 4rem;
+    border-radius: 4px;
+    animation-delay: .06s;
+}
